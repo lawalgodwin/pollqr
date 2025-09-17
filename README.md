@@ -1,6 +1,6 @@
 # PollQR — QR-first Polling & Voting Platform
 
-**One-line:** A web service to create polls, generate QR codes (static & dynamic), collect votes from mobile users, and analyze scan → vote conversion — built for events, classrooms, retail, and hybrid experiences.
+A web service to create polls, generate QR codes (static & dynamic), collect votes from mobile users, and analyze scan → vote conversion — built for events, classrooms, retail, and hybrid experiences.
 
 ---
 
@@ -255,11 +255,3 @@ Idempotency-Key: <uuid-v4>
 - Keep AI-generated outputs under human review; treat AI as a productivity tool, not an autonomous committer.
 
 ---
-
-## Want me to scaffold this repo?
-If you want, I can generate:
-- a starter repo file tree with core files (NestJS + Next.js skeleton), or  
-- an OpenAPI v3 skeleton for core endpoints, or  
-- an initial Playwright E2E test that covers QR → vote → confirm.
-
-Tell me which artifact you want and I’ll produce it inline.
