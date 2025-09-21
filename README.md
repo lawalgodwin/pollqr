@@ -162,7 +162,7 @@ We treat AI as an augmentation layer across the dev lifecycle: scaffolding, test
 
 ---
 
-## How to run locally (quickstart)
+## How to set up project and run locally (quickstart)
 
 ```bash
 # clone
@@ -173,14 +173,34 @@ cd pollqr
 cp .env.example .env
 # configure PostgreSQL and Redis locally or via docker-compose
 
-# install & run
-pnpm install    # or npm/yarn
-pnpm dev:db     # optional: start dev db via docker-compose
-pnpm dev        # start backend + frontend concurrently
+# install dependencies
+pnpm install
+```
 
-# tests
-pnpm test       # unit
-pnpm test:e2e   # Playwright E2E (requires running dev server)
+## Compile and run the project
+
+```bash
+# development
+$ pnpm run start
+
+# watch mode
+$ pnpm run start:dev
+
+# production mode
+$ pnpm run start:prod
+```
+
+## Run tests
+
+```bash
+# unit tests
+$ pnpm run test
+
+# e2e tests
+$ pnpm run test:e2e
+
+# test coverage
+$ pnpm run test:cov
 ```
 
 ---
