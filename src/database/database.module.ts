@@ -2,7 +2,6 @@ import { DynamicModule, Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { EntityClassOrSchema } from '@nestjs/typeorm/dist/interfaces/entity-class-or-schema.type';
 import { dataSourceOptions } from './datasource';
-import { DataSource } from 'typeorm';
 
 @Module({
   imports: [
@@ -10,7 +9,7 @@ import { DataSource } from 'typeorm';
       useFactory: async () => ({
         ...dataSourceOptions,
         autoLoadEntities: true,
-      })
+      }),
     }),
   ],
 })
