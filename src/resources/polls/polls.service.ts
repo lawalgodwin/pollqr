@@ -1,26 +1,30 @@
 import { Injectable } from '@nestjs/common';
 import { CreatePollDto } from './dto/create-poll.dto';
 import { UpdatePollDto } from './dto/update-poll.dto';
+import { PollRepository } from './repositories/poll.repository';
+import { Poll } from './entities/poll.entity';
 
 @Injectable()
 export class PollsService {
+  constructor(private readonly pollRepository: PollRepository) {}
   create(createPollDto: CreatePollDto) {
-    return 'This action adds a new poll';
+    const newPoll = new Poll(createPollDto);
+    return this.pollRepository.create(newPoll);
   }
 
   findAll() {
-    return `This action returns all polls`;
+    return this.pollRepository.findAll();
   }
 
-  findOne(id: number) {
-    return `This action returns a #${id} poll`;
+  findOne(pollId: string) {
+    return this.pollRepository.findOneBy({ pollId });
   }
 
-  update(id: number, updatePollDto: UpdatePollDto) {
-    return `This action updates a #${id} poll`;
+  update(pollId: string, updatePollDto: UpdatePollDto) {
+    return this.pollRepository.update({ pollId }, updatePollDto);
   }
 
-  remove(id: number) {
-    return `This action removes a #${id} poll`;
+  remove(pollId: string) {
+    return this.pollRepository.delete(pollId);
   }
 }
